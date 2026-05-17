@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why I deleted Sudoku.com for SudoEarth — SudoEarth</title>
+<meta name="description" content="I deleted Sudoku.com last Tuesday — not because the puzzles were bad, but because the streaks, leaderboards, and notifications turned a meditative game into a metric I owed. This is why I built SudoEarth instead.">
+<link rel="canonical" href="https://sudoearth.app/blog/why-i-deleted-sudoku-com/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Why I deleted Sudoku.com for SudoEarth">
+<meta property="og:description" content="On streaks, leaderboards, and the quiet game sudoku used to be — and the version of sudoku I had to build because nobody else would.">
+<meta property="og:url" content="https://sudoearth.app/blog/why-i-deleted-sudoku-com/">
+<meta property="og:site_name" content="SudoEarth">
+<meta property="article:published_time" content="2026-05-16">
+<meta property="article:author" content="Yue Hu">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Why I deleted Sudoku.com for SudoEarth">
+<meta name="twitter:description" content="On streaks, leaderboards, and the quiet game sudoku used to be.">
+<link rel="alternate" type="application/rss+xml" title="SudoEarth blog" href="/blog/feed.xml">
+<style>
+  :root {
+    --bg: #FAF7F2;
+    --fg: #2A2A2A;
+    --fg-muted: #6B6B6B;
+    --accent: #77AE8D;
+    --rule: #E5DFD5;
+    --code-bg: #F0EBE2;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
+                 Helvetica, Arial, "PingFang SC", "Hiragino Sans GB",
+                 "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.7;
+    font-size: 18px;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+  }
+  main {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 48px 24px 96px;
+  }
+  header.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 40px;
+  }
+  header.brand .leaf {
+    width: 28px;
+    height: 28px;
+    background: var(--accent);
+    border-radius: 50% 0;
+    transform: rotate(45deg);
+    flex-shrink: 0;
+  }
+  header.brand .name {
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: -0.01em;
+  }
+  header.brand .name a {
+    color: var(--fg);
+    text-decoration: none;
+  }
+  header.brand nav {
+    margin-left: auto;
+    font-size: 15px;
+  }
+  header.brand nav a {
+    color: var(--fg-muted);
+    text-decoration: none;
+  }
+  header.brand nav a:hover { color: var(--fg); }
+  article h1 {
+    font-size: 34px;
+    font-weight: 600;
+    margin: 0 0 8px;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+  }
+  article > header .meta {
+    color: var(--fg-muted);
+    font-size: 15px;
+    margin: 0 0 36px;
+  }
+  article h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 48px 0 16px;
+    letter-spacing: -0.01em;
+  }
+  article h3 {
+    font-size: 19px;
+    font-weight: 600;
+    margin: 28px 0 8px;
+  }
+  article p { margin: 0 0 20px; }
+  article ul, article ol { margin: 0 0 20px; padding-left: 24px; }
+  article li { margin-bottom: 8px; }
+  hr {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 40px 0;
+  }
+  a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+  a:hover { text-decoration: none; }
+  blockquote {
+    margin: 0 0 20px;
+    padding: 12px 20px;
+    border-left: 3px solid var(--accent);
+    background: rgba(119, 174, 141, 0.08);
+    border-radius: 0 6px 6px 0;
+    color: var(--fg);
+  }
+  blockquote p { margin: 0; font-style: italic; }
+  strong { font-weight: 600; }
+  em { font-style: italic; }
+  .post-footer {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    color: var(--fg-muted);
+    font-size: 15px;
+    font-style: italic;
+  }
+  .post-footer p { margin: 0 0 12px; }
+  footer.site {
+    margin-top: 72px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    color: var(--fg-muted);
+    font-size: 14px;
+  }
+  footer.site a { color: var(--fg-muted); }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #18202A;
+      --fg: #EAE6DE;
+      --fg-muted: #9AA0A8;
+      --rule: #2A3340;
+      --code-bg: #232C38;
+    }
+  }
+</style>
+</head>
+<body>
+<main>
+  <header class="brand">
+    <span class="leaf" aria-hidden="true"></span>
+    <span class="name"><a href="/">SudoEarth</a></span>
+    <nav><a href="/blog/">Writing</a></nav>
+  </header>
+
+  <article>
+    <header>
+      <h1>Why I deleted Sudoku.com for SudoEarth</h1>
+      <p class="meta"><time datetime="2026-05-16">May 16, 2026</time> · by Yue Hu</p>
+    </header>
+
+    <p>I deleted Sudoku.com last Tuesday.</p>
+
+    <p>Not because the puzzles were bad — they're fine. The grid is clean, the timer ticks, the leaderboard updates. I deleted it because every time I opened it, my chest tightened a little. Somewhere between "build a streak" and "improve your rank," sudoku had stopped being a puzzle I solved and started being a metric I owed.</p>
+
+    <p>So I went looking for sudoku that didn't ask me to perform. I didn't find it. So I built it. SudoEarth — a sudoku game painted in watercolor across five real places, with ambient soundscapes mixed by hand, no leaderboard, no streak, no badges. Just the grid, the place, the breath between numbers.</p>
+
+    <p>This is the story of why.</p>
+
+    <h2>The leaderboard problem</h2>
+
+    <p>Sudoku is, at heart, a quiet game. You sit down with a 9×9 grid and a pencil and you think. That's it. There's no opponent. The puzzle doesn't move. The only thing pressing against you is the gap between what you know and what the grid is asking.</p>
+
+    <p>For most of sudoku's history, that was the whole product. A book of puzzles. A page in a Sunday paper. A friend across a coffee table, sliding you the half they finished.</p>
+
+    <p>Then the apps came. And the apps did what apps do — they measured.</p>
+
+    <p>Open Sudoku.com today and you'll see your rank. Your streak. Your medals. A daily challenge that resets at midnight and shames you if you miss it. Push notifications that ask, "Are you going to lose your 47-day streak?" A leaderboard that compares your time on this morning's medium-difficulty puzzle to 4,000 other strangers who are also trying to forget it's Monday.</p>
+
+    <p>I'm not blaming Sudoku.com. They're optimizing for what apps optimize for: engagement. Time-on-device. Daily active users. Streaks are a known retention lever; leaderboards are a known engagement lever. Their numbers go up.</p>
+
+    <p>But here's the thing that nobody seems to say out loud: <strong>none of this is good for the puzzle.</strong></p>
+
+    <p>The leaderboard turns a meditative activity into a race. The streak turns a free-time hobby into an obligation. The daily challenge turns "I feel like doing a sudoku" into "I have to do a sudoku, today, or I lose something." The notification asks for your attention at the exact moment you finally weren't giving anyone your attention.</p>
+
+    <p>A Reddit user wrote, in a thread I keep coming back to: "I solve 30 sudoku a day on Sudoku.com and I feel worse than when I started." Thirty puzzles. That's three or four <em>hours</em> of grid-staring. And he feels worse.</p>
+
+    <p>That's not sudoku's fault. That's the app.</p>
+
+    <h2>What I wanted instead</h2>
+
+    <p>I wanted sudoku to feel like a walk.</p>
+
+    <p>You go on a walk for the walk. Not for the kilometers, not for the calorie counter, not to beat last week's pace. Sometimes you walk fast. Sometimes you stop and look at a fence. The walk doesn't care.</p>
+
+    <p>I wanted a sudoku app where I could open it, do one puzzle, set it down, and not see a single number telling me where I rank or how many days in a row I've shown up or whether I'm "improving."</p>
+
+    <p>I wanted the app to remember where I was — not to shame me for being gone, but to welcome me back to the same garden.</p>
+
+    <p>I wanted the visual world of the puzzle to feel like a place I was returning to, not a logo on a loading screen.</p>
+
+    <p>I wanted sound. Not music, not a "victory chime," not the synthetic <em>ding</em> of a number correctly placed. I wanted the sound of rain on a roof while I sat there with my pencil. I wanted to be allowed to play sudoku for the same reason people play piano in empty rooms — not to win, just to be in the activity.</p>
+
+    <p>I looked for this app for a year. I didn't find it.</p>
+
+    <p>The apps that called themselves "relaxing sudoku" were just regular sudoku with the timer hidden and a beige background. The apps that called themselves "mindful" had a leaderboard one tap away.</p>
+
+    <p>So a year ago I started building it.</p>
+
+    <h2>How SudoEarth solves it</h2>
+
+    <p>SudoEarth is five places: Iceland's aurora-lit fjords, Kyoto's bamboo groves, Tuscany's honey-colored hills, Norway's cold-blue waterfalls, Scotland's misty highlands. Each place is hand-painted in watercolor. Each holds thirty puzzles. Together they form a journey of 150 puzzles, designed to last about six months at one a day. Which is exactly the speed I wanted.</p>
+
+    <p>When you open SudoEarth, you don't see a leaderboard. You see a watercolor of Iceland and a small label: <em>Iceland Aurora Fjord — a green light on still water.</em> You tap in. You see thirty levels, painted into a quiet grid. You tap one. The puzzle sits on top of a wash of the chapter's watercolor — soft enough that you can read the digits, present enough that you remember you're somewhere.</p>
+
+    <p>When you ask for a hint, you don't get the answer; you get a coach. A small character named Mira will point at a row or a column or a 3×3 box and tell you what <em>kind</em> of move to look for. Tier 1: a direction. Tier 2: a technique. Tier 3, if you really want it: the answer. The hint is meant to teach you to see the puzzle, not to skip it.</p>
+
+    <p>When you fill in a number, the cell pulses gold for a half-second — barely there, just enough to confirm the placement landed. Every other cell on the board that holds the same digit lifts to a slightly deeper text color, so you can see, at a glance, how many of that number are already placed. That's it. No fanfare, no haptic explosion, no "+10 points!"</p>
+
+    <p>And underneath all of this, optional, off by default: five hand-mixed ambient soundscapes. Rain on a tile roof, with a guzheng plucked at a distance. Ocean waves at twilight, with a flute breathing in and out. Mountain wind through pine, with a slow string pad. Crackling campfire with a cello. Summer night crickets with sparse piano. Each is two minutes long, designed to loop, designed to play <em>under</em> whatever you're already listening to. If you've got Spotify on, SudoEarth doesn't interrupt. It just adds a thin layer of place.</p>
+
+    <p>That's the whole app.</p>
+
+    <p>150 puzzles. 5 places. 5 sounds. Zero leaderboards.</p>
+
+    <h2>What's NOT here, on purpose</h2>
+
+    <p>No leaderboard. Never will be. I will not build something that turns this app into a race.</p>
+
+    <p>No daily streak. If you take a week off, SudoEarth remembers exactly where you were and welcomes you back with the same garden. No shame screen. No "you've broken your 12-day streak" guilt-trip.</p>
+
+    <p>No advertising. No IDFA. No ATT prompt. No analytics-broker SDK loaded silently in the background. Crashlytics and UserDefaults are declared in the Privacy Manifest because Apple requires it; that's the entirety of what's running.</p>
+
+    <p>No push notifications, except one optional, opt-in reminder that you can set to a specific time of day if you actively want it.</p>
+
+    <p>No social feed, no comments, no friend invites, no badges to share. The Reddit user with thirty puzzles a day deserves an app that asks less of him. So does everyone else.</p>
+
+    <p>The premium subscription is for Mira hints beyond a daily cap and a handful of cosmetic options. The free game is the whole game. Solving puzzles costs you nothing.</p>
+
+    <h2>A walk, not a race</h2>
+
+    <p>I'm not telling you to delete Sudoku.com. If competitive sudoku makes you happy, keep it. The world is large enough for both kinds of app.</p>
+
+    <p>But if you've ever felt that tightening in your chest when the timer starts — if you've ever noticed yourself rushing through a puzzle you used to savor — there's a different way.</p>
+
+    <p>SudoEarth is on the App Store. It's $0 to download and $0 to play through all 150 puzzles. There's a Premium tier for Mira hints, but you don't need it. You don't need anything.</p>
+
+    <p>Just open the app, find Iceland, and sit down with the first grid. The aurora's been waiting for you.</p>
+
+    <p>— Yue Hu, sole developer<br>
+       SudoEarth, 2026</p>
+
+    <hr>
+
+    <div class="post-footer">
+      <p>If you want to know more about the design choices — why watercolor, why these five places, why the sounds are mixed the way they are — there's a longer technical post coming. To get one email a month (never marketing), write to <a href="mailto:newsletter@sudoearth.app">newsletter@sudoearth.app</a> and I'll add you.</p>
+      <p>If you want to try SudoEarth, <a href="https://apps.apple.com/app/sudoearth/id6765543717">download on the App Store</a>.</p>
+    </div>
+  </article>
+
+  <footer class="site">
+    <p><a href="/">SudoEarth</a> &middot;
+       <a href="/blog/">Writing</a> &middot;
+       <a href="/privacy/">Privacy</a> &middot;
+       <a href="/terms/">Terms</a></p>
+    <p>Questions? Email <a href="mailto:support@sudoearth.app">support@sudoearth.app</a>.</p>
+  </footer>
+</main>
+</body>
+</html>

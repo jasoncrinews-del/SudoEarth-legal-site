@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>SudoEarth — Writing</title>
+  <link>https://sudoearth.app/blog/</link>
+  <description>Notes on calm software, sudoku, and building an app that keeps time with you instead of demanding your time.</description>
+  <language>en-us</language>
+  <atom:link href="https://sudoearth.app/blog/feed.xml" rel="self" type="application/rss+xml" />
+  <managingEditor>support@sudoearth.app (Yue Hu)</managingEditor>
+  <webMaster>support@sudoearth.app (Yue Hu)</webMaster>
+
+  <item>
+    <title>Why I deleted Sudoku.com for SudoEarth</title>
+    <link>https://sudoearth.app/blog/why-i-deleted-sudoku-com/</link>
+    <guid isPermaLink="true">https://sudoearth.app/blog/why-i-deleted-sudoku-com/</guid>
+    <pubDate>Sat, 16 May 2026 00:00:00 GMT</pubDate>
+    <author>support@sudoearth.app (Yue Hu)</author>
+    <description>On streaks, leaderboards, and the quiet game sudoku used to be — and the version of sudoku I had to build because nobody else would.</description>
+  </item>
+</channel>
+</rss>

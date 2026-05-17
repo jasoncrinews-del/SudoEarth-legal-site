@@ -3,16 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex,nofollow"><!-- legal pages, not search-indexed -->
-<title>SudoEarth — A calm sudoku journey</title>
+<title>Writing — SudoEarth</title>
+<meta name="description" content="Notes on calm software, sudoku, and building an app that keeps time with you instead of demanding your time.">
+<link rel="canonical" href="https://sudoearth.app/blog/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Writing — SudoEarth">
+<meta property="og:description" content="Notes on calm software, sudoku, and building an app that keeps time with you.">
+<meta property="og:url" content="https://sudoearth.app/blog/">
+<meta property="og:site_name" content="SudoEarth">
+<link rel="alternate" type="application/rss+xml" title="SudoEarth blog" href="/blog/feed.xml">
 <style>
   :root {
     --bg: #FAF7F2;
     --fg: #2A2A2A;
     --fg-muted: #6B6B6B;
-    --accent: #77AE8D;       /* Iceland aurora green, matches MiraLeaf */
+    --accent: #77AE8D;
     --rule: #E5DFD5;
-    --code-bg: #F0EBE2;
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
@@ -28,7 +34,7 @@
     -webkit-text-size-adjust: 100%;
   }
   main {
-    max-width: 720px;
+    max-width: 680px;
     margin: 0 auto;
     padding: 48px 24px 96px;
   }
@@ -38,13 +44,13 @@
     gap: 12px;
     padding-bottom: 24px;
     border-bottom: 1px solid var(--rule);
-    margin-bottom: 32px;
+    margin-bottom: 40px;
   }
   header.brand .leaf {
     width: 28px;
     height: 28px;
     background: var(--accent);
-    border-radius: 50% 0;          /* leaf-ish silhouette */
+    border-radius: 50% 0;
     transform: rotate(45deg);
     flex-shrink: 0;
   }
@@ -57,44 +63,47 @@
     color: var(--fg);
     text-decoration: none;
   }
-  header.brand nav {
-    margin-left: auto;
-    font-size: 15px;
-  }
-  header.brand nav a {
-    color: var(--fg-muted);
-    text-decoration: none;
-  }
-  header.brand nav a:hover { color: var(--fg); }
   h1 {
-    font-size: 32px;
+    font-size: 30px;
     font-weight: 600;
     margin: 0 0 8px;
     letter-spacing: -0.02em;
   }
   p.subtitle {
     color: var(--fg-muted);
-    margin: 0 0 32px;
+    margin: 0 0 40px;
     font-size: 16px;
   }
-  h2 {
-    font-size: 22px;
+  ul.posts {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  ul.posts li {
+    border-bottom: 1px solid var(--rule);
+    padding: 24px 0;
+  }
+  ul.posts li:last-child { border-bottom: none; }
+  ul.posts a.title {
+    color: var(--fg);
+    text-decoration: none;
     font-weight: 600;
-    margin: 40px 0 12px;
+    font-size: 20px;
     letter-spacing: -0.01em;
+    display: block;
+    margin-bottom: 6px;
   }
-  h3 {
-    font-size: 18px;
-    font-weight: 600;
-    margin: 28px 0 8px;
+  ul.posts a.title:hover { color: var(--accent); }
+  ul.posts .meta {
+    color: var(--fg-muted);
+    font-size: 14px;
+    margin-bottom: 8px;
   }
-  p, ul, ol { margin: 0 0 16px; }
-  ul, ol { padding-left: 24px; }
-  li { margin-bottom: 6px; }
-  hr {
-    border: none;
-    border-top: 1px solid var(--rule);
-    margin: 32px 0;
+  ul.posts .summary {
+    color: var(--fg);
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.6;
   }
   a {
     color: var(--accent);
@@ -102,44 +111,20 @@
     text-underline-offset: 3px;
   }
   a:hover { text-decoration: none; }
-  code {
-    font-family: ui-monospace, "SF Mono", Menlo, Monaco, Consolas, monospace;
-    background: var(--code-bg);
-    padding: 1px 6px;
-    border-radius: 4px;
-    font-size: 0.92em;
-  }
-  pre {
-    background: var(--code-bg);
-    padding: 16px;
-    border-radius: 8px;
-    overflow-x: auto;
-  }
-  pre code { background: none; padding: 0; }
-  blockquote {
-    margin: 0 0 16px;
-    padding: 12px 16px;
-    border-left: 3px solid var(--accent);
-    background: rgba(119, 174, 141, 0.08);
-    border-radius: 0 6px 6px 0;
-  }
-  blockquote p { margin: 0; }
-  strong { font-weight: 600; }
-  footer {
-    margin-top: 64px;
+  footer.site {
+    margin-top: 72px;
     padding-top: 24px;
     border-top: 1px solid var(--rule);
     color: var(--fg-muted);
     font-size: 14px;
   }
-  footer a { color: var(--fg-muted); }
+  footer.site a { color: var(--fg-muted); }
   @media (prefers-color-scheme: dark) {
     :root {
       --bg: #18202A;
       --fg: #EAE6DE;
       --fg-muted: #9AA0A8;
       --rule: #2A3340;
-      --code-bg: #232C38;
     }
   }
 </style>
@@ -149,12 +134,20 @@
   <header class="brand">
     <span class="leaf" aria-hidden="true"></span>
     <span class="name"><a href="/">SudoEarth</a></span>
-    <nav><a href="/blog/">Writing</a></nav>
   </header>
-  <h1>SudoEarth</h1>
-  <p class="subtitle">A calm sudoku journey, narrated by Mira.</p>
-  <p>SudoEarth is a sudoku game with a chapter-driven world tour. Mira, your in-game guide, hints when you ask but never spoils the answer.</p><p><strong>Available on the App Store</strong> (<a href="https://apps.apple.com/app/sudoearth">link</a> — coming soon).</p><h2>Legal</h2><ul><li><a href="/privacy/">Privacy Policy</a></li><li><a href="/terms/">Terms of Service</a></li></ul><h2>Support</h2><p>Email <a href="mailto:support@sudoearth.app">support@sudoearth.app</a>.</p>
-  <footer>
+
+  <h1>Writing</h1>
+  <p class="subtitle">Notes on calm software, sudoku, and the version of an app that asks less of you.</p>
+
+  <ul class="posts">
+    <li>
+      <a class="title" href="/blog/why-i-deleted-sudoku-com/">Why I deleted Sudoku.com for SudoEarth</a>
+      <div class="meta"><time datetime="2026-05-16">May 16, 2026</time> · by Yue Hu</div>
+      <p class="summary">On streaks, leaderboards, and the quiet game sudoku used to be — and the version of sudoku I had to build because nobody else would.</p>
+    </li>
+  </ul>
+
+  <footer class="site">
     <p><a href="/">SudoEarth</a> &middot;
        <a href="/blog/">Writing</a> &middot;
        <a href="/privacy/">Privacy</a> &middot;
